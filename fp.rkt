@@ -116,4 +116,7 @@
 			
 		;if smallest of L1 is smaller than smallest of L2 find the next smallest
 		
-		(else '()))) ;incomplete
+		(else (next-smallest (L1 (smallest L2)))
+		)
+	)
+)
