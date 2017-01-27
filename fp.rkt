@@ -4,16 +4,18 @@
 		;return empty list if L is empty
 		((null? L) '())
 		;check if first element in list is list 
-                ((list? (car L) 
+                ((list? (car L)) 
 			;add last part of list to front and move the front to last
 			(cons	
 				(reverse-general (CDR L))
  				(reverse-general (car L))                      
-)			)
-		)
+                         )		
+                 )
+		
                ;if an atomic element
 		(else
 			(append
+				; append the first element to the end
 				(reverse-general (CDR L))
 				(list (car L))
 				
