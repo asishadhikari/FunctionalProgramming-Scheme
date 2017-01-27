@@ -5,5 +5,13 @@
 		((null? L) '())
 		;check if first element in list is list 
                 ((list? (car L) 
-			(reverse-general car L))
+			(cons
+				(reverse-general (CDR L))
+                       )
+               (else
+			(append
+				(reverse-general (CDR L))
+				;need an expression for car
+				)
+		)))
 		
