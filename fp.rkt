@@ -5,13 +5,17 @@
 		((null? L) '())
 		;check if first element in list is list 
                 ((list? (car L) 
-			(cons
+			;add last part of list to front and move the front to last
+			(cons	
 				(reverse-general (CDR L))
-                       )
-               (else
+ 				(reverse-general (car L))                      
+)			)
+		)
+               ;if an atomic element
+		(else
 			(append
 				(reverse-general (CDR L))
-				;need an expression for car
-				)
-		)))
+				(list (car L))
+				
+		))))
 		
