@@ -89,10 +89,19 @@
 (define (next-smallest L1 current-minL1 current-minL2)
 	(cond
 	;if L1 becomes null, return 0
-	((null? L1) 0)
-	((<car L1) (smallest (cdr L1) ))))
-
-
+	((null? L1) '())
+	
+	;if the first element is smaller then smallest value from cdr L1 return the latter	
+	(>((smallest (cdr L1)) (car L1)) (smallest (cdr L1)))
+	
+	;if the first element is larger than the smallest value from cdr L1 return first element 
+	(<((smallest (cdr L1)) (car L1)) (car L1))
+	
+	;if first element is not the second most large value, goto next round
+	(else (next-smallest ((cdr L1) floor-val)))
+	
+	)
+)
 
 (define (min-above-min L1 L2)
 	(cond
