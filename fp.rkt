@@ -72,9 +72,9 @@
 
 ;involves finding smalles element and comparing, so implement in two separate functions
 ;since it is given that nested lists are not used, conditional to handle it is not written 
-(define (smallest-number L)
+(define (smallest L)
 	(cond
-		;this function should not return value of null type. Instead 99999999 is used to recognize it
+		;not really required because min-above-min handles it too. Also 99999999 used to signify null
 		((null? L) 99999999)
 		
 		;if not number, return the smallest from the remaining list
@@ -86,6 +86,14 @@
 	)
 )
 
+(define (next-smallest L1 current-minL1 current-minL2)
+	(cond
+	;if L1 becomes null, return 0
+	((null? L1) 0)
+	((<car L1) (smallest (cdr L1) ))))
+
+
+
 (define (min-above-min L1 L2)
 	(cond
 		;#f if L1 null and L2 not null
@@ -96,7 +104,7 @@
 		
 		;if smallest of L1 is greater than smallest of L2 return smallest L1
 		((>(smallest L1) (smallest L2)) (smallest L1))
-		
+			
 		;if smallest of L1 is smaller than smallest of L2 find the next smallest
 		
 		(else '()))) ;incomplete
