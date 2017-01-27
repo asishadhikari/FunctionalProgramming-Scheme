@@ -55,7 +55,8 @@
 			;with the recursed value of cdr(L)
 		((list? (car L)) (+ (sum-up-numbers-general (car L)) (sum-up-numbers-general (cdr L))))
 		
-		((not(number? (car L))) (+ 0 (sum-up-numbers-general (cdr L))))
-		(else (+ ((car L) (sum-up-numbers-general (cdr L)))))
+		((not(number? (car L))) (+ (sum-up-numbers-general (cdr L)) 0))
+		
+		(else (+ sum-up-numbers-general (cdr L)) (car L)))
          )
 )	  
