@@ -92,16 +92,16 @@
 	((null? L1) '())
 	
 	;if the first element is smaller then smallest value from cdr L1 return the latter	
-	(>((smallest (cdr L1)) (car L1)) (smallest (cdr L1)))
+	((> (smallest (cdr L1)) (car L1)) (smallest (cdr L1)))
 	
 	;if the first element is larger than the smallest value from cdr L1 return first element 
-	(<((smallest (cdr L1)) (car L1)) (car L1))
+	(< ((smallest (cdr L1)) (car L1)) (car L1))
 	
 	;if first element is not the second most large value, goto next round
-	(else (next-smallest ((cdr L1) floor-val)))
+	(else (next-smallest (cdr L1) floor-val)))
 	
 	)
-)
+
 
 (define (min-above-min L1 L2)
 	(cond
@@ -116,7 +116,7 @@
 			
 		;if smallest of L1 is smaller than smallest of L2 find the next smallest
 		
-		(else (next-smallest (L1 (smallest L2)))
+		(else (next-smallest L1 (smallest L2))
 		)
 	)
 )
