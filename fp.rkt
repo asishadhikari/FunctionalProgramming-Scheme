@@ -31,13 +31,13 @@
 		((null? L) 0)
 		
 		;if element is a list, just sum the remaining part of the list
-		((list? (car  L)) (sum-up-numbers-simple (cdr L)))
+		((list? (car  L)) (+ (sum-up-numbers-simple (cdr L)) 0 ))
 		
 		;if element is a number, add it with the rest of the list recursively
-		(number? (car L)) (+ (sum-up-numbers-simple (cdr L)) (car L))
+		((number? (car L)) (+ (sum-up-numbers-simple (cdr L)) (car L))
 		
 		;else, the element is not a number, just sum remaining element in list 
-		(else (sum-up-numbers-simple (cdr L)))
+		(else (+ (sum-up-numbers-simple (cdr L)) 0))
 	)
 )		
 
