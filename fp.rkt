@@ -41,3 +41,8 @@
 	)
 )		
 
+
+
+;solution to question 3:
+
+(define (sum-up-general L) ())
