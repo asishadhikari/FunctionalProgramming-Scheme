@@ -69,6 +69,7 @@
 
 
 ;solution to question 4:
+
 ;involves finding smalles element and comparing, so implement in two separate functions
 ;since it is given that nested lists are not used, conditional to handle it is not written 
 (define (smallest-number L)
@@ -84,3 +85,11 @@
 		(else (smallest (cdr L)))
 	)
 )
+
+(define (min-above-min L1 L2)
+	(cond
+		;#f if L1 null and L2 not null
+		((null? L1) (null? L2))
+		
+		;return smallest element of L1 if L2 null
+		((null? L2) (smallest (L1)))
