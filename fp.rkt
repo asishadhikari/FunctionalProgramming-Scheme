@@ -45,4 +45,12 @@
 
 ;solution to question 3:
 
-(define (sum-up-general L) ())
+(define (sum-up-numbers-general L)
+	(cond
+	;conditions to be evaluated are:
+		;list is empty  then return 0
+		;first element is list, then analyse recursive value of the element and add
+			;with the recursed value of cdr(L)
+		;if number, add the element to cdr evaluated value with the element (car (l))
+		;if not number/in else conditional, add the (car(sum-up-number-general L) with 0
+	  
