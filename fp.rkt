@@ -71,10 +71,10 @@
 ;solution to question 4:
 ;involves finding smalles element and comparing, so implement in two separate functions
 (define (smallest-number L)
-	(cond(
-		((null? L) 0)
-		((<(car L) (smallest-number(cdr L)) (car L))
-
-(define (min-above-min L1 L2)
 	(cond
-	     ((null? L
+		((null? L) 66)
+		((not(number?(car L))) (smallest (cdr L)))
+		((<(car L) (smallest (cdr L))) (car L))
+		(else (smallest (cdr L)))
+	)
+)
