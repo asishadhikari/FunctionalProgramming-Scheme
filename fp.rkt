@@ -53,7 +53,9 @@
 		
 		;first element is list, then analyse recursive value of the element and add
 			;with the recursed value of cdr(L)
-		((list? (car L)) (+ (sum-up-numbers-general (car L)) (sum-up-numbers-general (cdr L))
+		((list? (car L)) (+ (sum-up-numbers-general (car L)) (sum-up-numbers-general (cdr L))))
+		
 		;if number, add the element to cdr evaluated value with the element (car (l))
+		((number? (car L)) (+ (car L) (sum-up-numbers-general (cdr L))))
 		;if not number/in else conditional, add the (car(sum-up-number-general L) with 0
 	  
