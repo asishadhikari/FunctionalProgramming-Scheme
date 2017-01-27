@@ -86,7 +86,7 @@
 	)
 )
 
-(define (next-smallest L1 current-minL1 current-minL2)
+(define (next-smallest L1 floor-val)
 	(cond
 	;if L1 becomes null, return 0
 	((null? L1) '())
