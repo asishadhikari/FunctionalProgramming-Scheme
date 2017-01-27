@@ -58,4 +58,6 @@
 		;if number, add the element to cdr evaluated value with the element (car (l))
 		((number? (car L)) (+ (car L) (sum-up-numbers-general (cdr L))))
 		;if not number/in else conditional, add the (car(sum-up-number-general L) with 0
-	  
+		(else (+ (sum-up-numbers-general (cdr (L))) 0))
+         )
+)	  
