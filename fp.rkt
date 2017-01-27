@@ -92,4 +92,11 @@
 		((null? L1) (null? L2))
 		
 		;return smallest element of L1 if L2 null
-		((null? L2) (smallest (L1)))
+		((null? L2) (smallest L1))
+		
+		;if smallest of L1 is greater than smallest of L2 return smallest L1
+		((>(smallest L1) (smallest L2)) (smallest L1))
+		
+		;if smallest of L1 is smaller than smallest of L2 find the next smallest
+		
+		(else '()))) ;incomplete
