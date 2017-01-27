@@ -70,10 +70,16 @@
 
 ;solution to question 4:
 ;involves finding smalles element and comparing, so implement in two separate functions
+;since it is given that nested lists are not used, conditional to handle it is not written 
 (define (smallest-number L)
 	(cond
-		((null? L) 66)
+		;this function should not return value of null type. Instead 99999999 is used to recognize it
+		((null? L) 99999999)
+		
+		;if not number, return the smallest from the remaining list
 		((not(number?(car L))) (smallest (cdr L)))
+		
+		;if the current element is smaller than the rest of the list, return the current element
 		((<(car L) (smallest (cdr L))) (car L))
 		(else (smallest (cdr L)))
 	)
